@@ -1,0 +1,61 @@
+body {
+  background-image: url("セブンイレブン　画像.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: auto;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", "ヒラギノ角ゴ ProN", "メイリオ", sans-serif;
+  color: #2c2c2c;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+figure {
+  text-align: center;
+  margin: 20px auto;
+}
+
+figcaption {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
+}
+
+h1 {
+  font-size: 26px;
+  color: #2c2c2c;
+}
+
+h2 {
+  font-size: 22px;
+  color: #004d99;
+  border-bottom: 2px solid #004d99;
+  padding-bottom: 5px;
+  margin-top: 40px;
+}
+
+/* ナビゲーションの追加（任意） */
+nav {
+  text-align: center;
+  margin-top: 20px;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #004d99;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
