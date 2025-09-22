@@ -1,23 +1,12 @@
-body {
-  background-image: url("セブンイレブン　画像.png");
-  background-repeat: repeat;
-  background-position: top left;
-  background-size: auto;
-  margin: 0;
-  padding: 0;
-  font-family: "Noto Sans JP", "ヒラギノ角ゴ ProN", "メイリオ", sans-serif;
-  color: #2c2c2c;
-}
-
 .content {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: #ffffff;
   width: 80%;
   max-width: 600px;
   margin: 50px auto;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  line-height: 1.8;
+  line-height: 2;
   font-size: 16px;
 }
 
@@ -43,19 +32,116 @@ h2 {
   border-bottom: 2px solid #004d99;
   padding-bottom: 5px;
   margin-top: 40px;
+  margin-bottom: 20px; /* ← 重複を統合 */
 }
 
-/* ナビゲーションの追加（任意） */
+/* ナビゲーション */
 nav {
   text-align: center;
   margin-top: 20px;
+  white-space: nowrap; /* 改行を防ぐ */
 }
+
 nav a {
-  margin: 0 15px;
+  display: inline-block;
+  margin: 0 10px;
   text-decoration: none;
   color: #004d99;
   font-weight: bold;
+  font-size: 14px; /* PCでも大きすぎないように調整 */
 }
+
 nav a:hover {
   text-decoration: underline;
 }
+
+/* 画像横並び */
+.image-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.bento-img {
+  height: 200px;
+  width: auto;
+  border-radius: 8px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.footer-section {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  border-top: 2px solid #ccc;
+}
+
+.footer-section h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* 区切り用（強み→次の話に繋ぐ部分） */
+.transition {
+  margin: 40px 0 30px; /* 上下に余白 */
+  padding: 15px 20px; /* 文章に少し余白 */
+  border-top: 1px dashed #aaa; /* 控えめな点線で区切り */
+}
+
+/* 📱 スマホ対応 */
+@media screen and (max-width: 600px) {
+  body {
+    background-size: cover; /* スマホでは背景を自動調整 */
+  }
+
+  .content {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  nav a {
+    font-size: 12px; /* スマホではさらに小さめ */
+    margin: 0 5px;   /* 間隔を詰める */
+  }
+
+  .image-center {
+    flex-direction: column; /* スマホでは縦並び */
+    gap: 10px;
+  }
+
+  .bento-img {
+    height: auto;
+    width: 90%; /* スマホは横幅に合わせて表示 */
+  }
+}
+
+/* 共通の背景 */
+body {
+  background-image: url("seven.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: auto;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", "ヒラギノ角ゴ ProN", "メイリオ", sans-serif;
+  color: #2c2c2c;}

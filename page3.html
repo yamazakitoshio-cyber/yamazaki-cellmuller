@@ -2,21 +2,48 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>セルミュラーでさげ底弁当に！！</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>48時間労働目指します</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page3">
   <div class="content">
     <h1>48時間労働で吉田さんに到達したい</h1>
-    <p>現状では吉田さんの力に全く届かない</p>
-    <p>印象のみでない、本当のマーケターになりたい</p>
-    <p>25日の課題に協力感謝します</p>
+    <div class="image-center">
+      <img id="bentoImage" src="seven.png" alt="セルミュラー" class="bento-img">
+    </div>
+    <p>現状の私は、見栄を張っているだけで、真の長時間労働者になれていない</p>
+    <p>吉田さんのように、本質的な仕事の仕方ができるようになりたい</p>
+    <p>まずは、時間から</p>
+
+    <h2>バリューに基づいた本物のマーケターに</h2>
+    <p><strong>社内の価値観への共感</strong></p>
+    <p>仕事中、表面的な仕事に流されそうな時<br>
+      バリューに必ず答えがあることに感動しました<br>
+      その中でも、自身が大切にしたいものがあります</p>
+
+    <p><strong>原動力を使いこなそう</strong></p>
+    <p>第一印象だけでなく、内面を大切にした人になりたい</p>
+    <p>退職した経緯を忘れずに働きたいです</p>
+    <p>48時間働けるような、熱い人間に成長していきたいです</p>
 
     <nav>
-      <a href="index.html">自己紹介文</a>
-      <a href="page2.html">自分の強み</a>
-      <a href="page3.html">今後の目標</a>
+      <a href="index.html">セブン社員山崎です</a>
+      <a href="page2.html">あげ底弁当つくれます</a>
+      <a href="page3.html">さげ底弁当つくりたい</a>
     </nav>
   </div>
+
+  <!-- JS: 画像を切り替え -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const bentoImage = document.getElementById("bentoImage");
+
+      // 3秒後に画像を切り替え
+      setTimeout(() => {
+        bentoImage.src = "cellmuller.png";
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
