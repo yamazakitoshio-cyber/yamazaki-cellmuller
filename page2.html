@@ -2,6 +2,29 @@
 <html lang="ja">
 <head>
 
+<script>
+(function() {
+  // 現在のページカウントを取得（Cookie）
+  var pageCount = parseInt(document.cookie.replace(/(?:(?:^|.*;\s*)page_count\s*\=\s*([^;]*).*$)|^.*$/, "$1")) || 0;
+
+  // ページカウントを1増加
+  pageCount++;
+
+  // Cookieに保存（有効期限1日）
+  var d = new Date();
+  d.setTime(d.getTime() + (1*24*60*60*1000));
+  document.cookie = "page_count=" + pageCount + ";expires=" + d.toUTCString() + ";path=/";
+
+  // 3ページ以上ならキーイベントを発火
+  if(pageCount >= 3){
+    window.dataLayer.push({
+      'event': 'key_event_pageview',
+      'page_count': pageCount
+    });
+  }
+})();
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -46,8 +69,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <p><strong>強み3. 24時間見栄を張れます</strong></p>
     <p>セブンでは40時間労働をしながら、接客していました<br>
-    マメ知識ですが、本当に限界を超えると、虹が見え気持ちよく失神できます<br>
-    皆さんにも、肉体的な耐久力は負けません</p>
+    本当に限界を超えると、虹が見え気持ちよく失神できることを知っています<br>
+    見栄を張ってるだけで、頭がパーによくなっています</p>
+
+    <P>この自己分析が合ってると思ったらいいねお願いします<p>
+
+      <button id="likeButton" class="like-btn">いいね 👍</button>
 
     <div class="transition">
     <p>そんな私、下手をすると、印象のみで終わるあげ底人生に<br>

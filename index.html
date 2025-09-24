@@ -2,6 +2,29 @@
 <html lang="ja">
 <head>
 
+  <script>
+(function() {
+  // 現在のページカウントを取得（Cookie）
+  var pageCount = parseInt(document.cookie.replace(/(?:(?:^|.*;\s*)page_count\s*\=\s*([^;]*).*$)|^.*$/, "$1")) || 0;
+
+  // ページカウントを1増加
+  pageCount++;
+
+  // Cookieに保存（有効期限1日）
+  var d = new Date();
+  d.setTime(d.getTime() + (1*24*60*60*1000));
+  document.cookie = "page_count=" + pageCount + ";expires=" + d.toUTCString() + ";path=/";
+
+  // 3ページ以上ならキーイベントを発火
+  if(pageCount >= 3){
+    window.dataLayer.push({
+      'event': 'key_event_pageview',
+      'page_count': pageCount
+    });
+  }
+})();
+</script>
+
 </script>
 
 <!-- Google Tag Manager -->
