@@ -2,29 +2,45 @@
 <html lang="ja">
 <head>
 
+  <!-- ページカウント＆イベント送信スクリプト -->
   <script>
 (function() {
-  // 現在のページカウントを取得（Cookie）
-  var pageCount = parseInt(document.cookie.replace(/(?:(?:^|.*;\s*)page_count\s*\=\s*([^;]*).*$)|^.*$/, "$1")) || 0;
+  // dataLayer が未定義なら初期化
+  window.dataLayer = window.dataLayer || [];
+
+  // Cookieを取得する関数
+  function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([.$?*|{}()[]\\/+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+
+  // ページカウントを取得
+  var pageCount = parseInt(getCookie("page_count")) || 0;
 
   // ページカウントを1増加
   pageCount++;
 
   // Cookieに保存（有効期限1日）
   var d = new Date();
-  d.setTime(d.getTime() + (1*24*60*60*1000));
+  d.setTime(d.getTime() + (24*60*60*1000)); // 1日
   document.cookie = "page_count=" + pageCount + ";expires=" + d.toUTCString() + ";path=/";
 
-  // 3ページ以上ならキーイベントを発火
-  if(pageCount >= 3){
+  // ① ページビューイベント（初回でも送信）
+  window.dataLayer.push({
+    'event': 'pageview',
+    'page_count': pageCount
+  });
+
+  // ② 3ページ以上で特別イベント
+  if (pageCount >= 3) {
     window.dataLayer.push({
       'event': 'key_event_pageview',
       'page_count': pageCount
     });
   }
 })();
-</script>
-
 </script>
 
 <!-- Google Tag Manager -->
