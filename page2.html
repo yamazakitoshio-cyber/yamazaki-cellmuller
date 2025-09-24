@@ -1,49 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
-<script>
-(function() {
-  // 現在のページカウントを取得（Cookie）
-  var pageCount = parseInt(document.cookie.replace(/(?:(?:^|.*;\s*)page_count\s*\=\s*([^;]*).*$)|^.*$/, "$1")) || 0;
-
-  // ページカウントを1増加
-  pageCount++;
-
-  // Cookieに保存（有効期限1日）
-  var d = new Date();
-  d.setTime(d.getTime() + (1*24*60*60*1000));
-  document.cookie = "page_count=" + pageCount + ";expires=" + d.toUTCString() + ";path=/";
-
-  // 3ページ以上ならキーイベントを発火
-  if(pageCount >= 3){
-    window.dataLayer.push({
-      'event': 'key_event_pageview',
-      'page_count': pageCount
-    });
-  }
-})();
-</script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-57NQXFWP');</script>
-<!-- End Google Tag Manager -->
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>セブンで培った技術力</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-57NQXFWP');
+  </script>
+  <!-- End Google Tag Manager -->
 </head>
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57NQXFWP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57NQXFWP"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <div class="content">
     <h1>セブンで培った技術力</h1>
@@ -72,25 +56,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     本当に限界を超えると、虹が見え気持ちよく失神できることを知っています<br>
     見栄を張ってるだけで、頭がパーによくなっています</p>
 
-    <P>この自己分析が合ってると思ったらいいねお願いします<p>
-
-      <button id="likeButton" class="like-btn">いいね 👍</button>
+    <p>この自己分析が合ってると思ったらいいねお願いします</p>
+    <button id="likeButton" class="like-btn">いいね 👍</button>
 
     <div class="transition">
-    <p>そんな私、下手をすると、印象のみで終わるあげ底人生に<br>
-思い悩み、転職活動をしていたところ<br>
-もっとハードに働けそうな環境がセルミュラーでした<br>
+      <p>そんな私、下手をすると、印象のみで終わるあげ底人生に<br>
+      思い悩み、転職活動をしていたところ<br>
+      もっとハードに働けそうな環境がセルミュラーでした<br></p>
+    </div>
+
+    <div class="content footer-section">
+      <h1>今後の目標</h1>
+      <p>48時間労働</p>
+
+      <nav>
+        <a href="index.html">セブン社員山崎です</a>
+        <a href="page2.html">あげ底弁当つくれます</a>
+        <a href="page3.html">48時間労働</a>
+      </nav>
+    </div>
   </div>
-
-<!-- 2ページ目の強み紹介セクション -->
-  <div class="content footer-section">
-    <h1>今後の目標</h1>
-    <p>48時間労働</p>
-
-    <nav>
-      <a href="index.html">セブン社員山崎です</a>
-      <a href="page2.html">あげ底弁当つくれます</a>
-      <a href="page3.html">48時間労働</a>
-    </nav>
-  </div>
-
+</body>
+</html>

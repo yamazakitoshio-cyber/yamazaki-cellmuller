@@ -1,75 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
-  <!-- ページカウント＆イベント送信スクリプト -->
-  <script>
-(function() {
-  // dataLayer が未定義なら初期化
-  window.dataLayer = window.dataLayer || [];
-
-  // Cookieを取得する関数
-  function getCookie(name) {
-    let matches = document.cookie.match(new RegExp(
-      "(?:^|; )" + name.replace(/([.$?*|{}()[]\\/+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
-
-  // ページカウントを取得
-  var pageCount = parseInt(getCookie("page_count")) || 0;
-
-  // ページカウントを1増加
-  pageCount++;
-
-  // Cookieに保存（有効期限1日）
-  var d = new Date();
-  d.setTime(d.getTime() + (24*60*60*1000)); // 1日
-  document.cookie = "page_count=" + pageCount + ";expires=" + d.toUTCString() + ";path=/";
-
-  // ① ページビューイベント（初回でも送信）
-  window.dataLayer.push({
-    'event': 'pageview',
-    'page_count': pageCount
-  });
-
-  // ② 3ページ以上で特別イベント
-  if (pageCount >= 3) {
-    window.dataLayer.push({
-      'event': 'key_event_pageview',
-      'page_count': pageCount
-    });
-  }
-})();
-</script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-57NQXFWP');</script>
-<!-- End Google Tag Manager -->
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>セブン社員山崎です</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-57NQXFWP');
+  </script>
+  <!-- End Google Tag Manager -->
 </head>
 <body>
 
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57NQXFWP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57NQXFWP"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- 自己紹介部分 -->
   <div class="content">
     <h1>セブン社員山崎です</h1>
     <p>私は山﨑敏郎です</p>
     <p>セブンイレブンで総合職をしていました</p>
-    <p>セブンニキなど言われるためこのようなサイトになってしまいました<br>
-    マーケターとして真摯に皆さんのニーズに応えたいと思います</p>
 
     <figure>
       <img id="happyPhoto" src="284.jpg" alt="セブン退職直前" width="200">
@@ -77,26 +41,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </figure>
 
     <h2>自己紹介</h2>
-    <p>1993年10月25日生まれ<br>
-    埼玉県越谷市出身</p>
-
+    <p>1993年10月25日生ま<br>埼玉県越谷市出身</p>
     <p>2018年　セブンイレブンジャパンに総合職として入社</p>
-    <p>2018年〜2021年　店長職<br>
-    ディズニーランド駐車場前の店舗にいました</p>
-
+    <p>2018年〜2021年　店長職</p>
     <p>2021年〜2022年　複数店舗アドバイザー</p>
-
-    <p>2023年〜末　ライフコーポレーション（スーパーマーケット）に転職</p>
-
-    <p>2024年〜　アドバイザー経験を活かす為、コンサルタントを目指し<br>
-    引越し業のお兄さんに ←謎</p>
-
+    <p>2023年〜末　ライフコーポレーションに転職</p>
+    <p>2024年〜　コンサルタントを目指す</p>
     <p>2025年〜　セルミュラーに入社</p>
 
     <div class="transition">
-    <p>拾ってもらったご恩を返したいと思います。<br>
-    セブンで培ったものが多く、その経験で得たものを<br>
-    皆さんに提供できるようになりたいです。</p>
+      <p>拾ってもらったご恩を返したいと思います。<br>
+      セブンで培ったものが多く、その経験で得たものを<br>
+      皆さんに提供できるようになりたいです。</p>
+    </div>
   </div>
 
   <!-- 2ページ目の強み紹介セクション -->
@@ -111,24 +68,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </nav>
   </div>
 
-  <!-- 写真アニメーションスクリプト -->
+  <!-- 写真アニメーション -->
   <script>
     const photo = document.getElementById('happyPhoto');
-
-    let angle = 0;
-    let scale = 1;
-    let direction = 1;
+    let angle = 0, scale = 1, direction = 1;
 
     function animatePhoto() {
       angle += 0.5;
       scale += direction * 0.003;
-
-      if (scale > 1.05 || scale < 0.95) {
-        direction *= -1;
-      }
-
-      photo.style.transform = `rotate(${Math.sin(angle * 0.05) * 5}deg) scale(${scale})`;
-
+      if (scale > 1.05 || scale < 0.95) direction *= -1;
+      photo.style.transform = `rotate(${Math.sin(angle * 0.05)*5}deg) scale(${scale})`;
       requestAnimationFrame(animatePhoto);
     }
 

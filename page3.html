@@ -1,52 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
-<script>
-(function() {
-  // 現在のページカウントを取得（Cookie）
-  var pageCount = parseInt(document.cookie.replace(/(?:(?:^|.*;\s*)page_count\s*\=\s*([^;]*).*$)|^.*$/, "$1")) || 0;
-
-  // ページカウントを1増加
-  pageCount++;
-
-  // Cookieに保存（有効期限1日）
-  var d = new Date();
-  d.setTime(d.getTime() + (1*24*60*60*1000));
-  document.cookie = "page_count=" + pageCount + ";expires=" + d.toUTCString() + ";path=/";
-
-  // 3ページ以上ならキーイベントを発火
-  if(pageCount >= 3){
-    window.dataLayer.push({
-      'event': 'key_event_pageview',
-      'page_count': pageCount
-    });
-  }
-})();
-</script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-57NQXFWP');</script>
-<!-- End Google Tag Manager -->
-
-<body class="page3">
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57NQXFWP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>48時間労働目指します</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-57NQXFWP');
+  </script>
+  <!-- End Google Tag Manager -->
 </head>
+<body class="page3">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57NQXFWP"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <div class="content">
     <h1>48時間労働で吉田さんに到達したい</h1>
@@ -70,11 +51,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <img src="sleep.jpeg" alt="眠っている様子">
 
-
-
-<p>コンサル研修ではバリューに基づいた<br>
-  皆にあった働き方を提案します。<br>
-  私一人では48時間労働の提案になります。参加よろしくお願いします。</p>
+    <p>コンサル研修ではバリューに基づいた<br>
+      皆にあった働き方を提案します。<br>
+      私一人では48時間労働の提案になります。参加よろしくお願いします。</p>
 
     <nav>
       <a href="index.html">セブン社員山崎です</a>
@@ -83,12 +62,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </nav>
   </div>
 
-  <!-- JS: 画像を切り替え -->
+  <!-- JS: 画像切り替え -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const bentoImage = document.getElementById("bentoImage");
-
-      // 3秒後に画像を切り替え
       setTimeout(() => {
         bentoImage.src = "cellmuller.png";
       }, 1500);
